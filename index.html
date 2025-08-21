@@ -5,520 +5,424 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV del Novio Ideal - Feli Leal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        .dancing { font-family: 'Dancing Script', cursive; }
+        .inter { font-family: 'Inter', sans-serif; }
         
-        :root {
-            --wine-red: #a3223a;
-            --soft-pink: #f8e8eb;
-            --gold: #d4af37;
-            --cream: #faf9f7;
+        .gradient-text {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 100%);
-        }
-        
-        .title-font {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .wine-red {
-            color: var(--wine-red);
-        }
-        
-        .bg-wine-red {
-            background-color: var(--wine-red);
-        }
-        
-        .border-wine-red {
-            border-color: var(--wine-red);
-        }
-        
-        .gold-text {
-            color: var(--gold);
-        }
-        
-        .bg-gold {
-            background-color: var(--gold);
-        }
-        
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .heart {
-            position: absolute;
-            color: rgba(163, 34, 58, 0.1);
-            animation: float 6s ease-in-out infinite;
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.3; }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
-        .section-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(163, 34, 58, 0.1);
-            transition: all 0.3s ease;
+        .pulse-heart {
+            animation: pulse-heart 2s ease-in-out infinite;
         }
         
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(163, 34, 58, 0.15);
+        @keyframes pulse-heart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         
-        .skill-badge {
-            background: linear-gradient(135deg, var(--wine-red), #c73650);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            display: inline-block;
-            margin: 0.25rem;
-            transition: transform 0.2s ease;
+        .slide-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
         
-        .skill-badge:hover {
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-grow:hover {
             transform: scale(1.05);
         }
         
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid var(--wine-red);
-            margin-bottom: 2rem;
+        .emoji-bounce {
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
         
-        .timeline-item::before {
-            content: '💕';
-            position: absolute;
-            left: -0.75rem;
-            top: 0;
-            background: white;
-            border: 2px solid var(--wine-red);
-            border-radius: 50%;
-            width: 1.5rem;
-            height: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-        }
-        
-        .match-button {
-            background: linear-gradient(135deg, var(--wine-red), #c73650);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(163, 34, 58, 0.3);
-        }
-        
-        .match-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(163, 34, 58, 0.4);
-            background: linear-gradient(135deg, #c73650, var(--wine-red));
-        }
-        
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 4px solid var(--wine-red);
-            box-shadow: 0 10px 30px rgba(163, 34, 58, 0.2);
-            background: linear-gradient(135deg, var(--soft-pink), white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            margin: 0 auto;
-        }
-        
-        .section-icon {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(135deg, var(--wine-red), #c73650);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.25rem;
-        }
-        
-        @media (max-width: 768px) {
-            .profile-image {
-                width: 150px;
-                height: 150px;
-                font-size: 3rem;
-            }
-            
-            .timeline-item {
-                padding-left: 1.5rem;
-            }
+        .emoji-bounce:hover {
+            transform: scale(1.3) rotate(10deg);
         }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Floating Hearts Background -->
-    <div class="floating-hearts">
-        <div class="heart" style="left: 10%; animation-delay: 0s;">💕</div>
-        <div class="heart" style="left: 20%; animation-delay: 1s;">💖</div>
-        <div class="heart" style="left: 30%; animation-delay: 2s;">💝</div>
-        <div class="heart" style="left: 40%; animation-delay: 3s;">💗</div>
-        <div class="heart" style="left: 50%; animation-delay: 4s;">💕</div>
-        <div class="heart" style="left: 60%; animation-delay: 5s;">💖</div>
-        <div class="heart" style="left: 70%; animation-delay: 1.5s;">💝</div>
-        <div class="heart" style="left: 80%; animation-delay: 2.5s;">💗</div>
-        <div class="heart" style="left: 90%; animation-delay: 3.5s;">💕</div>
-    </div>
-
-    <div class="relative z-10">
-        <!-- Header -->
-        <header class="bg-wine-red text-white py-12 shadow-2xl">
-            <div class="container mx-auto px-4 text-center">
-                <div class="profile-image mb-6">
+<body class="bg-gray-900 text-white inter">
+    <!-- Header -->
+    <header class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 text-6xl floating">💕</div>
+            <div class="absolute top-40 right-32 text-4xl floating" style="animation-delay: 1s;">☕</div>
+            <div class="absolute bottom-32 left-32 text-5xl floating" style="animation-delay: 2s;">🎵</div>
+            <div class="absolute bottom-20 right-20 text-4xl floating" style="animation-delay: 0.5s;">😊</div>
+        </div>
+        
+        <div class="text-center z-10 px-6 max-w-4xl">
+            <!-- Avatar -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center text-6xl pulse-heart">
                     👨‍💻
                 </div>
-                <h1 class="title-font text-5xl md:text-6xl font-bold mb-4">
-                    CURRÍCULUM VITAE
-                </h1>
-                <h2 class="title-font text-3xl md:text-4xl font-semibold mb-2 gold-text">
-                    DEL NOVIO IDEAL
-                </h2>
-                <h3 class="text-2xl md:text-3xl font-light">
-                    Felipe Leal
-                </h3>
-                <p class="text-lg mt-4 opacity-90">
-                    "Candidato a tu corazón con referencias verificables"
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text dancing">
+                CURRICULUM VITAE DEL NOVIO IDEAL
+            </h1>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                FELI LEAL
+            </h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
+                Postulándome oficialmente para ser tu novio con posibilidad de efectivización a pareja de por vida
+            </p>
+            <p class="text-red-400 dancing text-xl md:text-2xl">
+                Hecho con café, risas y mucho amor <span class="emoji-bounce">☕</span><span class="emoji-bounce">😂</span><span class="emoji-bounce">❤️</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- Datos Personales -->
+    <section class="py-16 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Datos Personales</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">👤</span>
+                        <h4 class="text-xl font-semibold text-red-400">Información Básica</h4>
+                    </div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><strong>Nombre:</strong> Felipe Leal</li>
+                        <li><strong>Alias:</strong> Feli, "el que siempre avisa cuando llega"</li>
+                        <li><strong>Edad:</strong> 20 años (pero con sabiduría emocional de 35)</li>
+                        <li><strong>Altura:</strong> 1.70 m (pero con facha se siente 1.80)</li>
+                        <li><strong>Ocupación:</strong> Futuro Ingeniero en Sistemas (si el café no me abandona)</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">💼</span>
+                        <h4 class="text-xl font-semibold text-red-400">Disponibilidad</h4>
+                    </div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><strong>Puesto Deseado:</strong> Novio oficial</li>
+                        <li><strong>Disponibilidad:</strong> Inmediata (fines de semana lluviosos y madrugadas incluidas)</li>
+                        <li><strong>Ubicación:</strong> Donde estés vos <span class="emoji-bounce">📍</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🎯</span>
+                    <h4 class="text-xl font-semibold text-red-400">Detalles Extra</h4>
+                </div>
+                <p class="text-gray-300">
+                    Fan de la música argentina (Abel Pintos, Airbag, Tan Biónica), buen cocinero ocasional (hamburguesas caseras y tortillas del norte), siempre con playlists listas para cualquier momento <span class="emoji-bounce">🎵</span><span class="emoji-bounce">🍔</span>
                 </p>
             </div>
-        </header>
-
-        <div class="container mx-auto px-4 py-12">
-            <!-- Datos Personales -->
-            <section class="mb-12">
-                <div class="section-card rounded-2xl p-8 shadow-xl">
-                    <div class="section-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h2 class="title-font text-3xl font-bold wine-red text-center mb-8">
-                        📋 Datos Personales
-                    </h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-3">
-                                <span class="font-semibold wine-red">Nombre:</span>
-                                <span>Felipe Leal</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="font-semibold wine-red">Alias:</span>
-                                <span>Feli, "el que siempre avisa cuando llega"</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="font-semibold wine-red">Edad:</span>
-                                <span>20 años (pero con sabiduría emocional de 35)</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="font-semibold wine-red">Altura:</span>
-                                <span>1.70 m, pero con facha se siente 1.80</span>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <span class="font-semibold wine-red">Ocupación:</span>
-                                <span>Futuro Ingeniero en Sistemas (si el café no me abandona)</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-semibold wine-red">Puesto Deseado:</span>
-                                <span>Novio oficial con posibilidad de efectivización a pareja de por vida</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-semibold wine-red">Disponibilidad:</span>
-                                <span>Inmediata, incluso en fines de semana lluviosos o madrugadas de crisis existenciales</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="font-semibold wine-red">Ubicación:</span>
-                                <span class="gold-text font-medium">Donde estés vos ✨</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experiencia Amorosa -->
-            <section class="mb-12">
-                <div class="section-card rounded-2xl p-8 shadow-xl">
-                    <div class="section-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h2 class="title-font text-3xl font-bold wine-red text-center mb-8">
-                        💼 Experiencia Amorosa
-                    </h2>
-                    <div class="timeline-item">
-                        <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg">
-                            <h3 class="text-xl font-bold wine-red mb-2">NOVIO 24/7</h3>
-                            <p class="text-sm gold-text font-medium mb-4">Enero 20XX - Actualidad</p>
-                            <ul class="space-y-2 text-gray-700">
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Acompañamiento total a ferias, cenas, eventos (aunque no lea mucho)</span>
-                                </li>
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Redacción creativa de mensajes de buenos días y noches</span>
-                                </li>
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Creador de apodos ridículamente tiernos (exclusivos)</span>
-                                </li>
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Estrategias post-discusión: abrazos, memes y chocolate</span>
-                                </li>
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Videollamadas eternas con WiFi intermitente</span>
-                                </li>
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Participación en reels y fotos sin quejas</span>
-                                </li>
-                                <li class="flex items-start space-x-2">
-                                    <span class="wine-red">•</span>
-                                    <span>Detección automática de "estás bien" camuflados</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Aptitudes Destacadas -->
-            <section class="mb-12">
-                <div class="section-card rounded-2xl p-8 shadow-xl">
-                    <div class="section-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h2 class="title-font text-3xl font-bold wine-red text-center mb-8">
-                        ⭐ Aptitudes Destacadas
-                    </h2>
-                    <div class="text-center">
-                        <span class="skill-badge">Ver pelis abrazados aunque se duerma</span>
-                        <span class="skill-badge">Opiniones sinceras sin herir</span>
-                        <span class="skill-badge">Esperar en probadores con entusiasmo real</span>
-                        <span class="skill-badge">Saber cuándo hablar y cuándo acompañar en silencio</span>
-                        <span class="skill-badge">Escuchar historias repetidas sin interrumpir</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Formación Romántica -->
-            <section class="mb-12">
-                <div class="section-card rounded-2xl p-8 shadow-xl">
-                    <div class="section-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h2 class="title-font text-3xl font-bold wine-red text-center mb-8">
-                        🎓 Formación Romántica
-                    </h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg">
-                                <h4 class="font-semibold wine-red">📚 Diplomatura en Citas Originales y Planes que Sorprenden</h4>
-                            </div>
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg">
-                                <h4 class="font-semibold wine-red">💕 Curso intensivo en Cómo hacer que tu pareja se sienta segura y amada</h4>
-                            </div>
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg">
-                                <h4 class="font-semibold wine-red">🏠 Taller práctico en Convivencia sin drama</h4>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg">
-                                <h4 class="font-semibold wine-red">📱 Certificación en Responder rápido los mensajes aunque esté en ranked</h4>
-                            </div>
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg">
-                                <h4 class="font-semibold wine-red">😢 Seminario Cómo sobrevivir a un domingo sin verte</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Idiomas -->
-            <section class="mb-12">
-                <div class="section-card rounded-2xl p-8 shadow-xl">
-                    <div class="section-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h2 class="title-font text-3xl font-bold wine-red text-center mb-8">
-                        🗣️ Idiomas
-                    </h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg">
-                                <span class="font-medium">Español</span>
-                                <span class="text-sm gold-text font-semibold">(nativo)</span>
-                            </div>
-                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg">
-                                <span class="font-medium">Inglés</span>
-                                <span class="text-sm gold-text font-semibold">(para decir "I love you" en momentos clave)</span>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg">
-                                <span class="font-medium">Sarcasmo</span>
-                                <span class="text-sm gold-text font-semibold">(nivel bilingüe)</span>
-                            </div>
-                            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg">
-                                <span class="font-medium">Lenguaje corporal</span>
-                                <span class="text-sm gold-text font-semibold">(experto en abrazos y caricias)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Referencias -->
-            <section class="mb-12">
-                <div class="section-card rounded-2xl p-8 shadow-xl">
-                    <div class="section-icon">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <h2 class="title-font text-3xl font-bold wine-red text-center mb-8">
-                        📝 Referencias
-                    </h2>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-6">
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg shadow-md">
-                                <h4 class="text-xl font-bold text-[#a3223a] mb-2">🎵 Playlist</h4>
-                                <a href="https://open.spotify.com/playlist/0uPgjtlnzKEN3ARJnZOyFm?si=ba06c5487f224cf9" 
-                                target="_blank" 
-                                class="text-blue-600 hover:underline break-all">
-                                Escuchala en Spotify
-                            </a>
-                            <p class="italic mt-2 text-sm text-gray-700">"De Feli para vos"</p>
-                        </div>
-
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg">
-                                <h4 class="font-bold wine-red mb-2">👩‍👦 Mamá de Feli</h4>
-                                <p class="italic">"Es un sol, y no solo porque soy su mamá"</p>
-                            </div>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg">
-                                <h4 class="font-bold wine-red mb-2">👥 Amigos</h4>
-                                <p class="italic">"Siempre el primero en organizar algo"</p>
-                            </div>
-                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg">
-                                <h4 class="font-bold wine-red mb-2">👭 Ex compañeras</h4>
-                                <p class="italic">"Un tipo que escucha sin juzgar (aunque intenso con los apuntes)"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Call to Action -->
-            <section class="text-center">
-                <div class="section-card rounded-2xl p-12 shadow-xl">
-                    <div class="mb-8">
-                        <h2 class="title-font text-4xl font-bold wine-red mb-4">
-                            ¿Te interesa este candidato?
-                        </h2>
-                        <p class="text-xl text-gray-600 mb-8">
-                            Si cumplís con los requisitos de ser vos misma y estar dispuesta a reírte de mis chistes malos...
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <a href="https://api.whatsapp.com/send?phone=3584010796" target="_blank" class="match-button text-xl block" onclick="createConfetti()">
-                            <i class="fab fa-whatsapp"></i>
-                            WhatsApp 💬
-                        </a>
-                        
-                        <a href="https://instagram.com/ffeli.leal" target="_blank" class="match-button text-xl block" onclick="createConfetti()">
-                            <i class="fab fa-instagram"></i>
-                            Instagram 📸
-                        </a>
-                        
-                        <p class="text-sm text-gray-600 italic mt-6">
-                            *Escribime por WhatsApp o seguime en Instagram mencionando que venís del CV 💘
-                        </p>
-                    </div>
-                </div>
-            </section>
         </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="bg-wine-red text-white py-8 mt-12">
-            <div class="container mx-auto px-4 text-center">
-                <p class="text-lg mb-2">💕 Hecho con amor (y mucho café) por Feli</p>
-                <p class="text-sm opacity-75">© 2025 - CV del Novio Ideal. Todos los derechos reservados para la persona correcta.</p>
+    <!-- Aptitudes Destacadas -->
+    <section class="py-16 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Aptitudes Destacadas</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-4xl mb-4 emoji-bounce">🎬</div>
+                    <p class="text-gray-300">Ver películas abrazados aunque me quede dormido</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-4xl mb-4 emoji-bounce">💭</div>
+                    <p class="text-gray-300">Dar opiniones sinceras sin herir sentimientos</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-4xl mb-4 emoji-bounce">👗</div>
+                    <p class="text-gray-300">Esperar mientras te probás ropa y decir "ese te queda increíble" con entusiasmo real</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-4xl mb-4 emoji-bounce">🤐</div>
+                    <p class="text-gray-300">Saber cuándo guardar silencio y cuándo hablar</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-4xl mb-4 emoji-bounce">👂</div>
+                    <p class="text-gray-300">Escuchar historias repetidas como si fueran nuevas</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-4xl mb-4 emoji-bounce">📅</div>
+                    <p class="text-gray-300">Organiza planes espontáneos y nunca llega sin avisar</p>
+                </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <!-- Green Flags -->
+    <section class="py-16 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Green Flags de Feli 🚩</h3>
+            <div class="space-y-4">
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">💚</span>
+                        <p class="text-gray-300">Atento y cariñoso, siempre pendiente de vos</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">📱</span>
+                        <p class="text-gray-300">Contesta rápido y da demasiado amor</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">📹</span>
+                        <p class="text-gray-300">Paciencia infinita en videollamadas y acompañamiento constante</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">😊</span>
+                        <p class="text-gray-300">Siempre encuentra el lado positivo y ayuda cuando alguien está mal</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">🤗</span>
+                        <p class="text-gray-300">Experto en apodos tiernos, memes estratégicos y abrazos reconfortantes</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">📚</span>
+                        <p class="text-gray-300">Capacidad comprobada de acompañarte a todos lados, incluso ferias de libros aunque no lea mucho</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-4">✍️</span>
+                        <p class="text-gray-300">Redacción creativa de mensajes personalizados de buenos días y buenas noches</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formación Romántica -->
+    <section class="py-16 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Formación Romántica 🎓</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">💕</span>
+                        <h4 class="text-lg font-semibold text-red-400">Diplomatura en Citas Originales</h4>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">🛡️</span>
+                        <h4 class="text-lg font-semibold text-red-400">Curso en "Hacer que tu pareja se sienta segura y amada"</h4>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">🍽️</span>
+                        <h4 class="text-lg font-semibold text-red-400">Taller de Convivencia sin drama (incluye lavar platos sin que me lo pidas)</h4>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">🎮</span>
+                        <h4 class="text-lg font-semibold text-red-400">Certificación en "Responder rápido mensajes aunque esté en ranked"</h4>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in md:col-span-2">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">😢</span>
+                        <h4 class="text-lg font-semibold text-red-400">Seminario en "Sobrevivir un domingo sin verte"</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referencias -->
+    <section class="py-16 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Referencias 📝</h3>
+            <div class="space-y-6">
+                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-start">
+                        <span class="text-3xl mr-4">🎵</span>
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Playlist "De Feli para vos"</h4>
+                            <p class="text-gray-300 italic">"Cada canción elegida con amor y pensando en vos"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-start">
+                        <span class="text-3xl mr-4">👩‍👦</span>
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Mamá de Feli</h4>
+                            <p class="text-gray-300 italic">"Mi hijo es un sol (y no lo digo solo porque soy su madre)"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-start">
+                        <span class="text-3xl mr-4">👥</span>
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Amigos</h4>
+                            <p class="text-gray-300 italic">"Siempre el primero en organizar algo y el último en irse si alguien la está pasando mal"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
+                    <div class="flex items-start">
+                        <span class="text-3xl mr-4">👩‍🎓</span>
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-400 mb-2">Ex compañeras</h4>
+                            <p class="text-gray-300 italic">"Escucha sin juzgar (aunque intenso con los apuntes)"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feli en Acción -->
+    <section class="py-16 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Feli en Acción 🎬</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-5xl mb-4 emoji-bounce">👨‍🍳</div>
+                    <p class="text-gray-300 text-sm">Feli cocinando sin quemar nada</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-5xl mb-4 emoji-bounce">☕</div>
+                    <p class="text-gray-300 text-sm">Feli con café infinito para sobrevivir a la facu</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-5xl mb-4 emoji-bounce">😂</div>
+                    <p class="text-gray-300 text-sm">Feli enviando memes estratégicos</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
+                    <div class="text-5xl mb-4 emoji-bounce">🤗</div>
+                    <p class="text-gray-300 text-sm">Feli abrazando cuando más lo necesitás</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-16 px-6 bg-gradient-to-br from-red-900 via-red-800 to-pink-900">
+        <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6 dancing text-white">¿Te interesa esta candidatura?</h3>
+            <p class="text-xl mb-8 text-red-100">¡No dejes pasar esta oportunidad única!</p>
+            
+            <div class="space-y-4">
+                <a href="https://wa.me/+5491234567890" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 pulse-heart">
+                    <span class="text-2xl mr-3">💬</span>
+                    ¡Hablame por WhatsApp ahora!
+                </a>
+                
+                <div class="text-red-100">
+                    <p class="mb-2">O seguime en Instagram:</p>
+                    <a href="https://instagram.com/ffeli.leal" target="_blank" class="inline-flex items-center text-pink-300 hover:text-pink-200 font-semibold text-lg transition-colors">
+                        <span class="text-2xl mr-2">📸</span>
+                        @ffeli.leal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-black text-center">
+        <p class="text-gray-400 dancing text-lg">
+            Hecho con <span class="text-red-500 pulse-heart">❤️</span> por Feli
+        </p>
+        <p class="text-gray-500 text-sm mt-2">
+            © 2024 - CV del Novio Ideal - Todos los derechos del corazón reservados
+        </p>
+    </footer>
 
     <script>
+        // Animación de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-        function createConfetti() {
-            const colors = ['#a3223a', '#d4af37', '#f8e8eb', '#ff69b4'];
-            const confettiCount = 50;
-            
-            for (let i = 0; i < confettiCount; i++) {
-                const confetti = document.createElement('div');
-                confetti.style.position = 'fixed';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.top = '-10px';
-                confetti.style.width = '10px';
-                confetti.style.height = '10px';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.borderRadius = '50%';
-                confetti.style.pointerEvents = 'none';
-                confetti.style.zIndex = '9999';
-                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
-                
-                document.body.appendChild(confetti);
-                
-                setTimeout(() => {
-                    confetti.remove();
-                }, 5000);
-            }
-        }
+        // Observar todos los elementos con clase slide-in
+        document.querySelectorAll('.slide-in').forEach(el => {
+            observer.observe(el);
+        });
 
-        // Add fall animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fall {
-                to {
-                    transform: translateY(100vh) rotate(360deg);
-                    opacity: 0;
+        // Efecto de escritura en el título principal
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
                 }
             }
-        `;
-        document.head.appendChild(style);
+            type();
+        }
 
-        // Smooth scrolling for better UX
+        // Smooth scroll para navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -532,28 +436,55 @@
             });
         });
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all section cards
-        document.querySelectorAll('.section-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        // Efecto de partículas de corazones al hacer click
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('pulse-heart') || e.target.closest('.pulse-heart')) {
+                createHeartParticles(e.pageX, e.pageY);
+            }
         });
+
+        function createHeartParticles(x, y) {
+            for (let i = 0; i < 6; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💕';
+                heart.style.position = 'fixed';
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                heart.style.fontSize = '20px';
+                heart.style.animation = `heartFloat 2s ease-out forwards`;
+                
+                const randomX = (Math.random() - 0.5) * 200;
+                const randomY = (Math.random() - 0.5) * 200;
+                
+                heart.style.setProperty('--randomX', randomX + 'px');
+                heart.style.setProperty('--randomY', randomY + 'px');
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 2000);
+            }
+        }
+
+        // Agregar keyframes para la animación de corazones
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes heartFloat {
+                0% {
+                    transform: translate(0, 0) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(var(--randomX), var(--randomY)) scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b76fd4a5c3dd2e',t:'MTc1NDU3NjY1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</body>
 </html>
