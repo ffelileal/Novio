@@ -3,488 +3,480 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novio  - Feli Leal</title>
+    <title>CV de Novio - Felipe Leal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .dancing { font-family: 'Dancing Script', cursive; }
-        .inter { font-family: 'Inter', sans-serif; }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        body {
+            box-sizing: border-box;
         }
         
-        .floating {
-            animation: float 3s ease-in-out infinite;
+        /* Variables CSS para tema beige */
+        :root {
+            --primary-color: #8b7355;
+            --secondary-color: #d4c4a8;
+            --detail-bg: #f5f1eb;
+            --text-main: #3d3427;
+            --bg-main: #faf8f3;
+            --divider-color: #d4c4a8;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        .primary-color { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+        .border-primary { border-color: var(--primary-color); }
+        .secondary-color { color: var(--secondary-color); }
+        .bg-secondary { background-color: var(--secondary-color); }
+        .bg-detail { background-color: var(--detail-bg); }
+        .text-main { color: var(--text-main); }
+        
+        .smooth-transition {
+            transition: all 0.3s ease;
         }
         
-        .pulse-heart {
-            animation: pulse-heart 2s ease-in-out infinite;
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        @keyframes pulse-heart {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .section-divider {
+            background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
+            height: 1px;
+            margin: 3rem 0;
         }
         
-        .slide-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .slide-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
         }
         
-        .hover-grow {
-            transition: transform 0.3s ease;
+        .theme-gradient {
+            background: linear-gradient(135deg, var(--bg-main) 0%, var(--detail-bg) 100%);
         }
         
-        .hover-grow:hover {
-            transform: scale(1.05);
+
+        
+        .flag-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
         }
         
-        .emoji-bounce {
-            display: inline-block;
-            transition: transform 0.3s ease;
+        .green-flag {
+            background-color: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid #22c55e;
         }
         
-        .emoji-bounce:hover {
-            transform: scale(1.3) rotate(10deg);
+        .red-flag {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .flag-item:hover {
+            transform: translateX(5px);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white inter">
+<body class="text-main font-sans leading-relaxed" id="mainBody" style="background-color: var(--bg-main);">
+
+
     <!-- Header -->
-    <header class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-20 text-6xl floating">💕</div>
-            <div class="absolute top-40 right-32 text-4xl floating" style="animation-delay: 1s;">☕</div>
-            <div class="absolute bottom-32 left-32 text-5xl floating" style="animation-delay: 2s;">🎵</div>
-            <div class="absolute bottom-20 right-20 text-4xl floating" style="animation-delay: 0.5s;">😊</div>
-        </div>
-        
-        <div class="text-center z-10 px-6 max-w-4xl">
-            <!-- Avatar -->
-            <div class="mb-8 flex justify-center">
-                <div class="w-32 h-32 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center text-6xl pulse-heart">
-                    👨‍💻
-                </div>
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text dancing">
-                CURRICULUM PARA SER NOVIOS
-            </h1>
-            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
-                FELI LEAL
-            </h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
-                Postulándome oficialmente para ser tu novio con posibilidad de efectivización a pareja de por vida
-            </p>
-            <p class="text-red-400 dancing text-xl md:text-2xl">
-                Hecho con café, risas y mucho amor <span class="emoji-bounce">☕</span><span class="emoji-bounce">😂</span><span class="emoji-bounce">❤️</span>
+    <header class="theme-gradient py-16 text-center fade-in" id="header">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-light mb-4 primary-color">Felipe Leal</h1>
+            <p class="text-2xl md:text-3xl font-light text-gray-600 mb-2">Novio Ideal</p>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                Postulación oficial a ser tu persona favorita ❤️
             </p>
         </div>
     </header>
 
-    <!-- Datos Personales -->
-    <section class="py-16 px-6 bg-gray-800">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Datos Personales</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-center mb-4">
-                        <span class="text-2xl mr-3">👤</span>
-                        <h4 class="text-xl font-semibold text-red-400">Información Básica</h4>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><strong>Nombre:</strong> Felipe Leal</li>
-                        <li><strong>Alias:</strong> Feli, "el que siempre avisa cuando llega"</li>
-                        <li><strong>Edad:</strong> 20 años (pero con sabiduría emocional de 35)</li>
-                        <li><strong>Altura:</strong> 1.70 m (pero con facha se siente 1.80)</li>
-                        <li><strong>Ocupación:</strong> Futuro Ingeniero en Sistemas (si el café no me abandona)</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-center mb-4">
-                        <span class="text-2xl mr-3">💼</span>
-                        <h4 class="text-xl font-semibold text-red-400">Disponibilidad</h4>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><strong>Puesto Deseado:</strong> Novio oficial</li>
-                        <li><strong>Disponibilidad:</strong> Inmediata (fines de semana lluviosos y madrugadas incluidas)</li>
-                        <li><strong>Ubicación:</strong> Donde estés vos <span class="emoji-bounce">📍</span></li>
-                    </ul>
-                </div>
+    <main class="max-w-4xl mx-auto px-6 pb-16">
+        <!-- Datos Personales -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">👤</span>
+                <h2 class="text-2xl font-light primary-color">Datos Personales</h2>
             </div>
-            
-            <div class="mt-6 bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                <div class="flex items-center mb-4">
-                    <span class="text-2xl mr-3">🎯</span>
-                    <h4 class="text-xl font-semibold text-red-400">Detalles Extra</h4>
-                </div>
-                <p class="text-gray-300">
-                    Fan de la música argentina (Abel Pintos, Airbag, Tan Biónica), buen cocinero ocasional (hamburguesas caseras y tortillas del norte), siempre con playlists listas para cualquier momento <span class="emoji-bounce">🎵</span><span class="emoji-bounce">🍔</span>
-                </p>
+            <div class="grid md:grid-cols-2 gap-4 text-gray-600">
+                <div><strong>Nombre:</strong> Felipe Leal</div>
+                <div><strong>Alias:</strong> Feli</div>
+                <div><strong>Edad:</strong> 20 años</div>
+                <div><strong>Altura:</strong> 1.70m</div>
+                <div><strong>Ocupación:</strong> Futuro Ingeniero en Informática (si el café no me abandona)</div>
+                <div><strong>Puesto deseado:</strong> Novio oficial</div>
+                <div><strong>Disponibilidad:</strong> 24/7 para ti</div>
+                <div><strong>Ubicación:</strong> Córdoba, Argentina</div>
+                <div><strong>Estado civil:</strong> Fiel (excepto al sueño)</div>
+                <div><strong>Equipo de fútbol:</strong> Obviamente de River (no veo partidos)</div>
+                <div><strong>Hobby principal:</strong> Juego jueguitos</div>
+                <div><strong>Referencia familiar:</strong> Novio ideal según mi abuela</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Aptitudes Destacadas -->
-    <section class="py-16 px-6 bg-gray-900">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Aptitudes Destacadas</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-4xl mb-4 emoji-bounce">🎬</div>
-                    <p class="text-gray-300">Ver películas abrazados aunque me quede dormido</p>
+        <div class="section-divider"></div>
+
+        <!-- Aptitudes Destacadas -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">⭐</span>
+                <h2 class="text-2xl font-light primary-color">Aptitudes Destacadas</h2>
+            </div>
+            <div class="grid md:grid-cols-1 gap-3">
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">🎬</span>
+                    <span class="text-gray-600">Ver pelis abrazados aunque me duerma en el minuto 20</span>
                 </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-4xl mb-4 emoji-bounce">💭</div>
-                    <p class="text-gray-300">Dar opiniones sinceras sin herir sentimientos</p>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">👂</span>
+                    <span class="text-gray-600">Escuchar aunque ya me sepa la historia de memoria</span>
                 </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-4xl mb-4 emoji-bounce">👗</div>
-                    <p class="text-gray-300">Esperar mientras te probás ropa y decir "ese te queda increíble" con entusiasmo real</p>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">💬</span>
+                    <span class="text-gray-600">Dar opiniones sinceras sin herir sentimientos</span>
                 </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-4xl mb-4 emoji-bounce">🤐</div>
-                    <p class="text-gray-300">Saber cuándo guardar silencio y cuándo hablar</p>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">🍳</span>
+                    <span class="text-gray-600">Cocino bien rico!! (especialidad confirmada)</span>
                 </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-4xl mb-4 emoji-bounce">👂</div>
-                    <p class="text-gray-300">Escuchar historias repetidas como si fueran nuevas</p>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">🎮</span>
+                    <span class="text-gray-600">Gaming skills nivel experto (puedo enseñarte)</span>
                 </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-4xl mb-4 emoji-bounce">📅</div>
-                    <p class="text-gray-300">Organiza planes espontáneos y nunca llega sin avisar</p>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">🎵</span>
+                    <span class="text-gray-600">Crear playlists para cada mood y momento</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">🤗</span>
+                    <span class="text-gray-600">Abrazos terapéuticos disponibles 24/7</span>
+                </div>
+                <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
+                    <span class="text-lg">⚽</span>
+                    <span class="text-gray-600">Hincha de River (pero no me hagas ver partidos)</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Green Flags -->
-    <section class="py-16 px-6 bg-gray-800">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Green Flags de Feli 🚩</h3>
+        <div class="section-divider"></div>
+
+        <!-- Formación Romántica -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">🎓</span>
+                <h2 class="text-2xl font-light primary-color">Formación Romántica</h2>
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <div>
+                    <strong>Diplomatura en "Cómo Sobrevivir a un Domingo sin Verte"</strong>
+                    <p class="text-sm text-gray-500">Universidad de los Extrañados • 2023</p>
+                    <p class="text-sm">Técnicas avanzadas de contar las horas hasta el lunes</p>
+                </div>
+                <div>
+                    <strong>Curso Intensivo de "Recordar Fechas Importantes"</strong>
+                    <p class="text-sm text-gray-500">Instituto de la Memoria Selectiva • 2022</p>
+                    <p class="text-sm">Especialización en aniversarios, cumpleaños y "el día que nos conocimos"</p>
+                </div>
+                <div>
+                    <strong>Maestría en "Interpretación de Mensajes de WhatsApp"</strong>
+                    <p class="text-sm text-gray-500">Academia de Comunicación Digital • 2021</p>
+                    <p class="text-sm">Análisis profundo de puntos, emojis y tiempos de respuesta</p>
+                </div>
+                <div>
+                    <strong>Certificación en "Cocina Rica sin Quemar la Casa"</strong>
+                    <p class="text-sm text-gray-500">Instituto Culinario del Corazón • 2020</p>
+                    <p class="text-sm">Especialización en comidas que enamoran (y no intoxican)</p>
+                </div>
+                <div>
+                    <strong>Curso de "Gaming Cooperativo en Pareja"</strong>
+                    <p class="text-sm text-gray-500">Academia de Entretenimiento Compartido • 2019</p>
+                    <p class="text-sm">Cómo jugar juntos sin discutir (mucho)</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Idiomas -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">🗣️</span>
+                <h2 class="text-2xl font-light primary-color">Idiomas</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 text-gray-600">
+                <div class="flex justify-between items-center">
+                    <span>Español</span>
+                    <span class="primary-color font-medium">Nativo</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Inglés</span>
+                    <span class="primary-color font-medium">Intermedio</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Sarcasmo</span>
+                    <span class="primary-color font-medium">Avanzado</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Lenguaje corporal</span>
+                    <span class="primary-color font-medium">Experto</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Gaming</span>
+                    <span class="primary-color font-medium">Fluido</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Código (futuro)</span>
+                    <span class="primary-color font-medium">En progreso</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Green Flags -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">✅</span>
+                <h2 class="text-2xl font-light primary-color">Green Flags</h2>
+            </div>
+            <div class="space-y-2">
+                <div class="flag-item green-flag">
+                    <span class="mr-3">🎯</span>
+                    <span>Atento a los pequeños detalles que importan</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">👂</span>
+                    <span>Escucha activa (sin revisar el celular)</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">😂</span>
+                    <span>Buen humor incluso en lunes por la mañana</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">💚</span>
+                    <span>Disponibilidad emocional real</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">📅</span>
+                    <span>Recordar fechas importantes (y las no tan importantes)</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">🍳</span>
+                    <span>Cocina bien rico (confirmado por múltiples fuentes)</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">💙</span>
+                    <span>Fiel como hincha de River (y como novio)</span>
+                </div>
+                <div class="flag-item green-flag">
+                    <span class="mr-3">👵</span>
+                    <span>Aprobado por la abuela (máxima autoridad)</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Red Flags -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">❌</span>
+                <h2 class="text-2xl font-light primary-color">Red Flags (Honestidad ante todo)</h2>
+            </div>
+            <div class="space-y-2">
+                <div class="flag-item red-flag">
+                    <span class="mr-3">😴</span>
+                    <span>Me duermo viendo películas (pero te abrazo mientras)</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">📚</span>
+                    <span>Soy intenso con los apuntes de la facultad</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">🌙</span>
+                    <span>Respondo memes a las 3 AM</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">☕</span>
+                    <span>Tomo demasiado café (mi supervivencia depende de ello)</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">🎮</span>
+                    <span>Puedo viciarme jugando (pero te incluyo en la partida)</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">⚽</span>
+                    <span>Soy de River pero no veo partidos (confuso, lo sé)</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">😴</span>
+                    <span>Infiel al sueño (me traiciona seguido)</span>
+                </div>
+                <div class="flag-item red-flag">
+                    <span class="mr-3">🎵</span>
+                    <span>Canto en la ducha (y no siempre bien)</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Referencias -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">💭</span>
+                <h2 class="text-2xl font-light primary-color">Referencias</h2>
+            </div>
             <div class="space-y-4">
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">💚</span>
-                        <p class="text-gray-300">Atento y cariñoso, siempre pendiente de vos</p>
-                    </div>
-                </div>
-                
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">📱</span>
-                        <p class="text-gray-300">Contesta rápido y da demasiado amor</p>
-                    </div>
-                </div>
-                
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">📹</span>
-                        <p class="text-gray-300">Paciencia infinita en videollamadas y acompañamiento constante</p>
-                    </div>
-                </div>
-                
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">😊</span>
-                        <p class="text-gray-300">Siempre encuentra el lado positivo y ayuda cuando alguien está mal</p>
-                    </div>
-                </div>
-                
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">🤗</span>
-                        <p class="text-gray-300">Experto en apodos tiernos, memes estratégicos y abrazos reconfortantes</p>
-                    </div>
-                </div>
-                
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">📚</span>
-                        <p class="text-gray-300">Capacidad comprobada de acompañarte a todos lados, incluso ferias de libros aunque no lea mucho</p>
-                    </div>
-                </div>
-                
-                <div class="bg-green-900 bg-opacity-30 border-l-4 border-green-500 p-6 rounded-r-lg hover-grow slide-in">
-                    <div class="flex items-center">
-                        <span class="text-2xl mr-4">✍️</span>
-                        <p class="text-gray-300">Redacción creativa de mensajes personalizados de buenos días y buenas noches</p>
-                    </div>
-                </div>
+                <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">
+                    "Es el novio ideal, se los digo yo que lo conozco desde que nació"
+                    <footer class="text-sm text-gray-400 mt-2">- Su abuela (fuente más confiable del universo)</footer>
+                </blockquote>
+                <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">
+                    "Cocina mejor que yo y eso que soy su mamá. Además nunca se olvida de llamar"
+                    <footer class="text-sm text-gray-400 mt-2">- Su mamá (orgullo maternal)</footer>
+                </blockquote>
+                <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">
+                    "Siempre está cuando lo necesitas, incluso a las 2 AM para hablar de la vida o jugar online"
+                    <footer class="text-sm text-gray-400 mt-2">- Mejor amigo desde la secundaria</footer>
+                </blockquote>
+                <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">
+                    "Sus playlists son arte puro. Nunca falla con la música perfecta para cada momento"
+                    <footer class="text-sm text-gray-400 mt-2">- Mi cuenta de Spotify</footer>
+                </blockquote>
+                <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">
+                    "Hace los mejores desayunos sorpresa y nunca se olvida del café como me gusta"
+                    <footer class="text-sm text-gray-400 mt-2">- Su hermana (testigo de calidad)</footer>
+                </blockquote>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Formación Romántica -->
-    <section class="py-16 px-6 bg-gray-900">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Formación Romántica 🎓</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-center mb-3">
-                        <span class="text-2xl mr-3">💕</span>
-                        <h4 class="text-lg font-semibold text-red-400">Diplomatura en Citas Originales</h4>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-center mb-3">
-                        <span class="text-2xl mr-3">🛡️</span>
-                        <h4 class="text-lg font-semibold text-red-400">Curso en "Hacer que tu pareja se sienta segura y amada"</h4>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-center mb-3">
-                        <span class="text-2xl mr-3">🍽️</span>
-                        <h4 class="text-lg font-semibold text-red-400">Taller de Convivencia sin drama (incluye lavar platos sin que me lo pidas)</h4>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-center mb-3">
-                        <span class="text-2xl mr-3">🎮</span>
-                        <h4 class="text-lg font-semibold text-red-400">Certificación en "Responder rápido mensajes aunque esté en ranked"</h4>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in md:col-span-2">
-                    <div class="flex items-center mb-3">
-                        <span class="text-2xl mr-3">😢</span>
-                        <h4 class="text-lg font-semibold text-red-400">Seminario en "Sobrevivir un domingo sin verte"</h4>
-                    </div>
-                </div>
+        <div class="section-divider"></div>
+
+        <!-- Formulario Organizar Plan -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-sm hover-lift smooth-transition fade-in section-card">
+            <div class="flex items-center mb-6">
+                <span class="text-2xl mr-3">📅</span>
+                <h2 class="text-2xl font-light primary-color">Organizar un Plan</h2>
             </div>
-        </div>
-    </section>
+            <p class="text-gray-600 mb-6">¿Te gustaría conocerme mejor? Propón un plan y coordinemos para hacerlo realidad.</p>
+            <form id="planForm" class="space-y-4">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Tu nombre</label>
+                    <input type="text" id="nombre" name="nombre" required 
+                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-200 smooth-transition"
+                           placeholder="¿Cómo te llamas?"
+                          <input type="text" class="input-principal">
 
-    <!-- Referencias -->
-    <section class="py-16 px-6 bg-gray-800">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Referencias 📝</h3>
-            <div class="space-y-6">
-                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-start">
-                        <span class="text-3xl mr-4">🎵</span>
-                        <div>
-                            <h4 class="text-xl font-semibold text-red-400 mb-2">Playlist "De Feli para vos"</h4>
-                            <p class="text-gray-300 italic">"Cada canción elegida con amor y pensando en vos"</p>
-                        </div>
-                    </div>
                 </div>
-                
-                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-start">
-                        <span class="text-3xl mr-4">👩‍👦</span>
-                        <div>
-                            <h4 class="text-xl font-semibold text-red-400 mb-2">Mamá de Feli</h4>
-                            <p class="text-gray-300 italic">"Mi hijo es un sol (y no lo digo solo porque soy su madre)"</p>
-                        </div>
-                    </div>
+                <div>
+                    <label for="plan" class="block text-sm font-medium text-gray-700 mb-2">Idea del plan</label>
+                    <input type="text" id="plan" name="plan" required 
+                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-200 smooth-transition"
+                           placeholder="Ej: Café y charla, caminata, cena, jugar videojuegos..."
+                           <input type="text" class="input-principal">
                 </div>
-                
-                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-start">
-                        <span class="text-3xl mr-4">👥</span>
-                        <div>
-                            <h4 class="text-xl font-semibold text-red-400 mb-2">Amigos</h4>
-                            <p class="text-gray-300 italic">"Siempre el primero en organizar algo y el último en irse si alguien la está pasando mal"</p>
-                        </div>
-                    </div>
+                <div>
+                    <label for="fecha" class="block text-sm font-medium text-gray-700 mb-2">Fecha y hora sugerida</label>
+                    <input type="text" id="fecha" name="fecha" required 
+                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-200 smooth-transition"
+                           placeholder="Ej: Sábado 15 a las 19:00, Domingo por la tarde..."
+                           <input type="text" class="input-principal">
                 </div>
-                
-                <div class="bg-gray-700 p-6 rounded-lg hover-grow slide-in">
-                    <div class="flex items-start">
-                        <span class="text-3xl mr-4">👩‍🎓</span>
-                        <div>
-                            <h4 class="text-xl font-semibold text-red-400 mb-2">Ex compañeras</h4>
-                            <p class="text-gray-300 italic">"Escucha sin juzgar (aunque intenso con los apuntes)"</p>
-                        </div>
-                    </div>
+                <div>
+                    <label for="ofrece" class="block text-sm font-medium text-gray-700 mb-2">¿Qué tenés para ofrecer?</label>
+                    <textarea id="ofrece" name="ofrece" required 
+                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-200 smooth-transition h-24 resize-none"
+                           placeholder="Contame un poco sobre vos, tus intereses, qué buscás..."
+                           <input type="text" class="input-principal"></textarea>
                 </div>
-            </div>
-        </div>
-    </section>
+                <button type="submit" 
+                        class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 smooth-transition hover-lift">
+                    Enviar propuesta por WhatsApp 💘
+                </button>
+            </form>
+        </section>
 
-    <!-- Feli en Acción -->
-    <section class="py-16 px-6 bg-gray-900">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-8 text-center dancing gradient-text">Feli en Acción 🎬</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-5xl mb-4 emoji-bounce">👨‍🍳</div>
-                    <p class="text-gray-300 text-sm">Feli cocinando sin quemar nada</p>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-5xl mb-4 emoji-bounce">☕</div>
-                    <p class="text-gray-300 text-sm">Feli con café infinito para sobrevivir a la facu</p>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-5xl mb-4 emoji-bounce">😂</div>
-                    <p class="text-gray-300 text-sm">Feli enviando memes estratégicos</p>
-                </div>
-                
-                <div class="bg-gray-800 p-6 rounded-lg hover-grow slide-in text-center">
-                    <div class="text-5xl mb-4 emoji-bounce">🤗</div>
-                    <p class="text-gray-300 text-sm">Feli abrazando cuando más lo necesitás</p>
-                </div>
-            </div>
+        <!-- Call to Action -->
+        <div class="text-center space-y-4 fade-in">
+            <a href="https://wa.me/543584010796" target="_blank" rel="noopener noreferrer"
+               class="inline-block bg-primary text-white py-4 px-8 rounded-full text-lg font-medium hover:opacity-90 smooth-transition hover-lift">
+                ¿Te interesa este candidato? 💕
+            </a>
+            <br>
+            <a href="https://instagram.com/ffeli.leal" target="_blank" rel="noopener noreferrer"
+               class="inline-block border-2 border-primary primary-color py-2 px-6 rounded-full hover:bg-primary hover:text-white smooth-transition">
+                Ver Instagram
+            </a>
         </div>
-    </section>
+    </main>
 
-    <!-- Contacto -->
-    <section class="py-16 px-6 bg-gradient-to-br from-red-900 via-red-800 to-pink-900">
-        <div class="max-w-2xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-6 dancing text-white">¿Te interesa esta candidatura?</h3>
-            <p class="text-xl mb-8 text-red-100">¡No dejes pasar esta oportunidad única!</p>
-            
-            <div class="space-y-4">
-                <a href="https://wa.me/+543584010796" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 pulse-heart">
-                    <span class="text-2xl mr-3">💬</span>
-                    Escribime por WhatsApp y organizamos algo!
-                </a>
-                
-                <div class="text-red-100">
-                    <p class="mb-2">O seguime en Instagram:</p>
-                    <a href="https://instagram.com/ffeli.leal" target="_blank" class="inline-flex items-center text-pink-300 hover:text-pink-200 font-semibold text-lg transition-colors">
-                        <span class="text-2xl mr-2">📸</span>
-                        @ffeli.leal
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 px-6 bg-black text-center">
-        <p class="text-gray-400 dancing text-lg">
-            Hecho con <span class="text-red-500 pulse-heart">❤️</span> por Feli
-        </p>
-        <p class="text-gray-500 text-sm mt-2">
-            © 2024 - CV del Novio Ideal - Todos los derechos del corazón reservados
-        </p>
+    <footer class="text-center py-8 text-gray-400 text-sm">
+        <p>Hecho con ❤️ para encontrar a mi persona favorita</p>
     </footer>
 
     <script>
-        // Animación de scroll
+
+
+        // Formulario de plan
+        document.getElementById('planForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const plan = document.getElementById('plan').value;
+            const fecha = document.getElementById('fecha').value;
+            const ofrece = document.getElementById('ofrece').value;
+            
+            const mensaje = `Hola soy ${nombre} 💘
+
+Me interesa este candidato para novio. 
+
+📅 Plan propuesto: ${plan}
+🕐 Fecha y hora: ${fecha}
+
+💫 Qué tengo para ofrecer:
+${ofrece}
+
+¡Espero tu respuesta!`;
+            
+            const whatsappUrl = `https://wa.me/543584010796?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+
+        // Animaciones al hacer scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        // Observar todos los elementos con clase slide-in
-        document.querySelectorAll('.slide-in').forEach(el => {
-            observer.observe(el);
+        // Observar todas las secciones
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
         });
-
-        // Efecto de escritura en el título principal
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Smooth scroll para navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Efecto de partículas de corazones al hacer click
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('pulse-heart') || e.target.closest('.pulse-heart')) {
-                createHeartParticles(e.pageX, e.pageY);
-            }
-        });
-
-        function createHeartParticles(x, y) {
-            for (let i = 0; i < 6; i++) {
-                const heart = document.createElement('div');
-                heart.innerHTML = '💕';
-                heart.style.position = 'fixed';
-                heart.style.left = x + 'px';
-                heart.style.top = y + 'px';
-                heart.style.pointerEvents = 'none';
-                heart.style.zIndex = '9999';
-                heart.style.fontSize = '20px';
-                heart.style.animation = `heartFloat 2s ease-out forwards`;
-                
-                const randomX = (Math.random() - 0.5) * 200;
-                const randomY = (Math.random() - 0.5) * 200;
-                
-                heart.style.setProperty('--randomX', randomX + 'px');
-                heart.style.setProperty('--randomY', randomY + 'px');
-                
-                document.body.appendChild(heart);
-                
-                setTimeout(() => {
-                    heart.remove();
-                }, 2000);
-            }
-        }
-
-        // Agregar keyframes para la animación de corazones
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes heartFloat {
-                0% {
-                    transform: translate(0, 0) scale(1);
-                    opacity: 1;
-                }
-                100% {
-                    transform: translate(var(--randomX), var(--randomY)) scale(0);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
-
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98a1493d341c9c09',t:'MTc1OTcxMzEwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
